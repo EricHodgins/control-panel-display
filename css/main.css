@@ -1,0 +1,116 @@
+/* prevent text highlighting on double click*/
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+#mainHolder {
+	margin: auto;
+	border-radius: 25px;
+	width: 600px;
+	height: 820px;
+	background-color: rgb(65,61,61);
+}
+
+
+#ppacScreen {
+	position: relative;
+	top: 30px;
+	margin: auto;
+	width: 500px;
+	height: 300px;
+	background-color: rgb(124, 174, 110);
+}
+
+
+/* screen buttons */
+#screenButtonsHolder {
+	position: relative;
+	top: 43px;
+	margin: auto;
+	width: 500px;
+	height: 465px;
+	background-color: rgb(65, 61, 61);
+}
+
+.ppacButton {
+	height: 80px;
+	width: 80px;
+	border-radius: 10%;
+	border: 2px solid white;
+	color: white;
+	float: left;
+	margin-right: 20px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 75px;
+	margin-bottom: 8px;
+}
+
+.buttonEnd {
+	margin-right: 0;
+}
+
+.enter {
+	width: 184px;
+	margin-right: 0;
+}
+
+/* Screen Text */
+p {
+	margin-top: -8px; /* pulls up text. Move -'ve the tighter it is.' */
+	margin-bottom: 0;
+	font-family: 'Oswald', sans-serif;
+	font-size: 36px;
+}
+
+/* the arrow on the screen to scroll to an option */
+span {
+	color: rgb(124, 174, 110);
+	font-weight: 900;
+	font-size: 46px;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
+/* Master screen styling */
+.hint {
+	font-size: 20px;
+	margin-left: 375px;
+	margin-right: 0;
+	margin-bottom: 15px;
+}
+
+.masterMain {
+	margin-left: 40px;
+	margin-top: -8px;
+}
+
+.enterNumbers {
+	color: black;
+	font-size: 35px;
+}
+
+
+/* Configuration Styling  */
+.config {
+	margin-left: 30px;
+}
+
+.configSpan {
+	color: black;
+}
+
+.editConfig {
+	display: none;
+	margin-left: 30px;
+}
+
+.configEditNumpad {
+	color: black;
+}
