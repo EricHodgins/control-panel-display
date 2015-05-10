@@ -17,13 +17,13 @@ var configurationScreens = {
 
 	dribbleScreen1: [['<p class="config">Set Dribble 1 amount</p>',
 					  '<p class="config">Current Dribble is</p>',
-					  '<p class="config dribbleAmount1">45 grams</p>',
-					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>']],
+					  '<p class="config configSetting">45 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], 55],
 
 	dribbleScreen2: [['<p class="config">Set Dribble 2 amount</p>',
 					  '<p class="config">Current Dribble is</p>',
-					  '<p class="config dribbleAmount2">55 grams</p>',
-					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>']]					  
+					  '<p class="config configSetting">55 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], 45]					  
 }
 
 var configScreenTracker = 0;
@@ -47,8 +47,17 @@ function enterConfigMode() {
 		$('.editConfig').css("display", "inline").append(editableText);
 	} else if (configEditMode) {
 		configEditMode = false;
+		var userEntry = "";
+		for (var i = 0; i < numSequence.length; i++) {
+			if (numSequence[i] !== "_ ") {
+				userEntry += String(numSequence[i]);
+			}
+		};
+		$('.configSetting').text(userEntry + " grams");
 		$("span").remove();
 		$('.editConfig').css("display", "none");
+		numSequence = ['_ ', '_ ', '_ ', '_ ', '_ ', '_ '];
+		numPositionTracker = 0;
 	}
 	
 }

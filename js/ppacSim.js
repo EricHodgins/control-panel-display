@@ -97,6 +97,7 @@ $('.setup').click(function() {
 $('.clearButton').click(function() {
 	if (configEditMode) {
 		configEditMode = false;
+		$('span').remove();
 	} else if (currentScreen !== textScreens.mainScreen) {
 		console.log("screen popped");
 		screenTracker.pop();
