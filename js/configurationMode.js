@@ -1,11 +1,8 @@
-var configSettings = {
-	dribble1: 45,
-	dribble2: 45,
-	dribble3: 45,
-	dribble4: 45,
-	dribble5: 45,
-	dribble6: 45
-}
+var configSettingChange = [
+	0, //reinstall Factory
+	45, 45, 45, 45, 45, 45, // dribble rates
+	75, 75, 75, 75, 75, 75, // spit times
+]
 
 
 var configMode = false;
@@ -13,17 +10,42 @@ var configEditMode = false;
 var configurationScreens = {
 	reinstallFactoryDefualtsScreen: [['<p class="config">Reinstall Factory</p>',
 									 '<p class="config">Default Numbers',
-									 '<p class="editConfig"></p>'], ['<span class="configSpan">Nooooo!!!!</span>']],
+									 '<p class="editConfig"></p>'], ['<span class="configSpan">Nooooo!!!!</span>'], ""],
 
 	dribbleScreen1: [['<p class="config">Set Dribble 1 amount</p>',
 					  '<p class="config">Current Dribble is</p>',
-					  '<p class="config configSetting">45 grams</p>',
-					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], 55],
+					  '<p class="config configSetting">' + configSettingChange[1] + 'grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],
 
 	dribbleScreen2: [['<p class="config">Set Dribble 2 amount</p>',
 					  '<p class="config">Current Dribble is</p>',
 					  '<p class="config configSetting">55 grams</p>',
-					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], 45]					  
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],
+
+	dribbleScreen3: [['<p class="config">Set Dribble 3 amount</p>',
+					  '<p class="config">Current Dribble is</p>',
+					  '<p class="config configSetting">55 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],	
+
+	dribbleScreen4: [['<p class="config">Set Dribble 4 amount</p>',
+					  '<p class="config">Current Dribble is</p>',
+					  '<p class="config configSetting">55 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],	
+
+	dribbleScreen5: [['<p class="config">Set Dribble 5 amount</p>',
+					  '<p class="config">Current Dribble is</p>',
+					  '<p class="config configSetting">55 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],	
+
+	dribbleScreen6: [['<p class="config">Set Dribble 6 amount</p>',
+					  '<p class="config">Current Dribble is</p>',
+					  '<p class="config configSetting">55 grams</p>',
+					  '<p class="editConfig">New Dribble =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " grams"],	
+
+	spitScreen1: [['<p class="config">Set spit time 1</p>',
+					  '<p class="config">Current Spit time is</p>',
+					  '<p class="config configSetting">75 mS</p>',
+					  '<p class="editConfig">New Spit time =</p>'], ['<span class="enterNumbers">_ _ _ _ _ _</span>'], " mS"],						  					  					  					  					  					  
 }
 
 var configScreenTracker = 0;
@@ -53,7 +75,9 @@ function enterConfigMode() {
 				userEntry += String(numSequence[i]);
 			}
 		};
-		$('.configSetting').text(userEntry + " grams");
+		configSettingChange[configScreenTracker] = 90;
+
+		$('.configSetting').text(userEntry + configScreensInOrder[configScreenTracker][2]);
 		$("span").remove();
 		$('.editConfig').css("display", "none");
 		numSequence = ['_ ', '_ ', '_ ', '_ ', '_ ', '_ '];
