@@ -64,7 +64,7 @@ $.each(textScreens.mainScreen, function(i, screenPoint) {
 
 // Hitting up on key pad
 $('.up').click(function() {
-	if (currentArrowPosition > 0) {
+	if (currentArrowPosition > 0 && !configMode) {
 		var deselectOldSpan = "span:eq(" + currentArrowPosition + ")"; 
 		$('#ppacScreen').children('p').children(deselectOldSpan).css("color", "rgb(124, 174, 110)");
 		currentArrowPosition -= 1;
@@ -75,7 +75,8 @@ $('.up').click(function() {
 
 // Hitting down on key pad
 $('.down').click(function() {
-	if (currentArrowPosition < (currentScreen.length - 1)) {
+	if (currentArrowPosition < (currentScreen.length - 1) && !configMode) {
+		console.log("ppacSim down method");
 		var deselectOldSpan = "span:eq(" + currentArrowPosition + ")";
 		$('#ppacScreen').children('p').children(deselectOldSpan).css("color", "rgb(124, 174, 110)");
 		currentArrowPosition += 1;
